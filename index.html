@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishal Rajbhar | Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Cards */
+.card {
+  padding: 20px;
+  margin: 20px 0;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(56,189,248,0.3);
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Vishal Rajbhar</h1>
+  <p>AI Developer • Student • Builder</p>
+  <a class="button" href="https://github.com/irl-raizen">View GitHub</a>
+</header>
+
+<section class="glass">
+  <h2>About Me</h2>
+  <p>
+    B.Sc Computer Science student focused on Artificial Intelligence,
+    Machine Learning, and building real-world systems.
+  </p>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="card glass">
+    <h3>AI Style Generator</h3>
+    <p>Generates anime & Ghibli-style images using AI models.</p>
+  </div>
+
+  <div class="card glass">
+    <h3>Inventory Management System</h3>
+    <p>Tracks hardware and maintenance efficiently.</p>
+  </div>
+
+</section>
+
+<section class="glass">
+  <h2>Skills</h2>
+  <p>Python • AI • GitHub • Web Development</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: vishalrajbhar0777@gmail.com</p>
+</section>
+
+</body>
+</html>
