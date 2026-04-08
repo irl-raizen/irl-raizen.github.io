@@ -1,228 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vishal Rajbhar | AI Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal Vijay Rajbhar | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #050505;
+            --primary-accent: #00f2fe;
+            --secondary-accent: #4facfe;
+            --text-main: #ffffff;
+            --text-muted: #a0aab2;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --glass-blur: 12px;
+        }
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e2e8f0;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-/* Container */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
+        /* Animated Background Elements */
+        .bg-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out alternate;
+        }
 
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-}
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(79, 172, 254, 0.2);
+            top: -10%;
+            left: -10%;
+        }
 
-nav a {
-  color: #94a3b8;
-  text-decoration: none;
-  margin-left: 20px;
-}
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 242, 254, 0.15);
+            bottom: -5%;
+            right: -10%;
+            animation-duration: 12s;
+            animation-direction: alternate-reverse;
+        }
 
-nav a:hover {
-  color: white;
-}
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(30px) translateX(30px); }
+        }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(var(--glass-blur));
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+        }
 
-.hero h1 {
-  font-size: 3.5rem;
-  background: linear-gradient(90deg,#38bdf8,#a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.hero p {
-  color: #94a3b8;
-  font-size: 1.2rem;
-}
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-/* BUTTONS */
-.btn {
-  margin: 10px;
-  padding: 12px 24px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.3s;
-}
+        .nav-links a:hover {
+            color: var(--primary-accent);
+        }
 
-.primary {
-  background: linear-gradient(90deg,#38bdf8,#a78bfa);
-  color: white;
-}
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
 
-.primary:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(56,189,248,0.5);
-}
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-.secondary {
-  border: 1px solid #334155;
-}
+        .hero-subtitle {
+            color: var(--primary-accent);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
 
-.secondary:hover {
-  background: #1e293b;
-}
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #a0aab2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* SECTIONS */
-section {
-  margin: 80px 0;
-}
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
 
-h2 {
-  margin-bottom: 10px;
-}
+        .contact-info-hero {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
 
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.4s;
-}
+        .contact-item:hover {
+            color: var(--primary-accent);
+        }
 
-.card:hover {
-  transform: translateY(-8px);
-  border-color: #38bdf8;
-}
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
 
-/* SKILLS */
-.skills span {
-  background: #1e293b;
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin: 5px;
-  display: inline-block;
-}
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #64748b;
-}
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+        }
 
-/* RESPONSIVE */
-@media(max-width: 768px){
-  .grid {
-    grid-template-columns: 1fr;
-  }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+        }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-}
-</style>
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--card-bg);
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 100px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-accent), transparent);
+            border-radius: 2px;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        /* Timeline (Education & Experience) */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--card-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-accent);
+            box-shadow: 0 0 10px var(--primary-accent);
+        }
+
+        .timeline-date {
+            color: var(--primary-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-subtitle {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: #d1d5db;
+        }
+
+        .timeline-content ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-accent);
+        }
+
+        /* Skills Layout */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--secondary-accent);
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 242, 254, 0.1);
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Layout */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            flex-grow: 1;
+        }
+
+        /* Additional Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; } /* Could add a hamburger menu for full implementation */
+            .contact-info-hero { flex-direction: column; gap: 10px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <!-- Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
 
-<!-- NAVBAR -->
-<nav>
-  <div><strong>Vishal</strong></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">VVR.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+        </div>
+    </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Vishal Rajbhar</h1>
-  <p>AI Developer • Building Real Projects • Future Engineer</p>
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <p class="hero-subtitle">IT Professional & Developer</p>
+                <h1>Vishal Vijay Rajbhar</h1>
+                <p>Dynamic IT professional with a solid background in technical support, operations management, and AI development. I thrive on collaboration and strive to optimize workflows in high-pressure environments.</p>
+                
+                <div class="contact-info-hero">
+                    <a href="mailto:vishalrajbhar0777@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i> vishalrajbhar0777@gmail.com
+                    </a>
+                    <a href="tel:+919322839617" class="contact-item">
+                        <i class="fas fa-phone"></i> +91 9322839617
+                    </a>
+                    <a href="https://linkedin.com/in/vishal-rajbhar-215" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <span class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i> Mumbai Suburban, India
+                    </span>
+                </div>
 
-  <a class="btn primary" href="https://github.com/irl-raizen">GitHub</a>
-  <a class="btn secondary" href="resume.pdf">Download Resume</a>
-</div>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary">View Portfolio</a>
+                    <a href="https://github.com/irl-raizen" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
 
-<!-- ABOUT -->
-<section id="about" data-aos="fade-up">
-  <h2>About</h2>
-  <p>
-    I am a Computer Science student focused on Artificial Intelligence and real-world systems.
-    I enjoy solving practical problems and building projects that create impact.
-  </p>
-</section>
+        <!-- Education -->
+        <section id="about" data-aos="fade-up">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">Graduating 2027</div>
+                    <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
+                    <p class="timeline-subtitle">Laxmichand Golwala College | Mumbai University</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>GPA:</strong> 8.5</li>
+                            <li><strong>Coursework:</strong> Data Structures, Algorithms, Operating Systems, Database Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- PROJECTS -->
-<section id="projects" data-aos="fade-up">
-  <h2>Projects</h2>
+        <!-- Skills -->
+        <section id="skills" data-aos="fade-up">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                
+                <div class="glass-card">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming & Web</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
 
-  <div class="grid">
+                <div class="glass-card">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> AI & Data</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Generative AI</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Pandas</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="card">
-      <h3>AI Style Generator</h3>
-      <p>AI-based system for generating anime and Ghibli-style images.</p>
-      <a class="btn primary" href="https://github.com/irl-raizen">View Code</a>
+                <div class="glass-card">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Design</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Git / GitHub</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Graphic Design</span>
+                            <span class="skill-tag">Trello / Asana</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" data-aos="fade-up">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">December 2024 - Present</div>
+                    <h3 class="timeline-title">Technical & Operations Support</h3>
+                    <p class="timeline-subtitle">Pyiquantum IT Company | Mumbai, India</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Provided crucial support to ensure successful operation of various IT activities and managed event systems.</li>
+                            <li>Handled participant registrations, ensuring accurate database updates.</li>
+                            <li>Deployed QR-based systems for rapid identification and improved guest experiences.</li>
+                            <li>Delivered real-time troubleshooting support during events, minimizing downtime.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">June 2024 - Present</div>
+                    <h3 class="timeline-title">Volunteer & Instructor</h3>
+                    <p class="timeline-subtitle">Asha Trust NGO | Mumbai, India</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Engaged as a volunteer instructor, teaching digital literacy to students from diverse backgrounds.</li>
+                            <li>Designed and implemented beginner-friendly curriculum covering basic computer skills.</li>
+                            <li>Taught Scratch programming and web technologies (HTML & CSS) to novices.</li>
+                            <li>Created hands-on exercises that enhanced engagement and understanding.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" data-aos="fade-up">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <i class="fas fa-image project-icon"></i>
+                        <span class="timeline-date">December 2025</span>
+                    </div>
+                    <h3 class="project-title">AI Image Gen & Style Transfer System</h3>
+                    <p class="project-desc">Developed an innovative platform for generating distinctive AI-driven images, with a specific focus on anime styles. Successfully prepared datasets for optimal training outcomes.</p>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <i class="fas fa-qrcode project-icon"></i>
+                        <span class="timeline-date">December 2024</span>
+                    </div>
+                    <h3 class="project-title">SHG Event Registration System</h3>
+                    <p class="project-desc">Streamlined the registration process for Self Help Groups across Maharashtra through QR identification methods. Ensured real-time technical solutions for managing participant data.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications -->
+        <section data-aos="fade-up">
+            <h2 class="section-title">Achievements & Info</h2>
+            <div class="projects-grid">
+                
+                <div class="glass-card">
+                    <h3 class="project-title" style="margin-bottom:15px;"><i class="fas fa-trophy" style="color:var(--primary-accent)"></i> Awards</h3>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>2nd Runner-Up – Debugging Competition (C++)</li>
+                            <li>Certificate of Excellence in Tech Community Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3 class="project-title" style="margin-bottom:15px;"><i class="fas fa-certificate" style="color:var(--primary-accent)"></i> Certifications</h3>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Google Analytics Certification (2026)</li>
+                            <li>AI Tools Workshop – Be10x (2026)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Personal Info -->
+        <section data-aos="fade-up">
+            <div class="glass-card">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Languages</span>
+                        <span class="info-value">English (Native), Hindi (Proficient)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-value">19-12-2006</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nationality</span>
+                        <span class="info-value">Indian</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Affiliations</span>
+                        <span class="info-value">Member, CS Student Association</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <div class="card">
-      <h3>Inventory Management System</h3>
-      <p>System for tracking hardware, issues, and maintenance workflows.</p>
-      <a class="btn primary" href="https://github.com/irl-raizen">View Code</a>
-    </div>
+    <footer>
+        <p>© 2026 Vishal Vijay Rajbhar. Designed with <i class="fas fa-heart" style="color: #ff3366;"></i></p>
+    </footer>
 
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section data-aos="fade-up">
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>Python</span>
-    <span>Machine Learning</span>
-    <span>Git</span>
-    <span>GitHub</span>
-    <span>Web Development</span>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" data-aos="fade-up">
-  <h2>Contact</h2>
-  <p>Email: vishalrajbhar0777@gmail.com</p>
-</section>
-
-<footer>
-  © 2026 Vishal Rajbhar
-</footer>
-
-</div>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({ duration: 800, once: true });</script>
-
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
 </body>
 </html>
