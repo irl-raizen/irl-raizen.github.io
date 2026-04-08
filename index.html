@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vishal Rajbhar | Portfolio</title>
+<title>Vishal Rajbhar | AI Developer</title>
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -13,7 +13,6 @@ body {
   font-family: 'Inter', sans-serif;
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: #e2e8f0;
-  overflow-x: hidden;
 }
 
 /* Container */
@@ -23,11 +22,27 @@ body {
   padding: 20px;
 }
 
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: white;
+}
+
 /* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  animation: fadeIn 1s ease;
+  padding: 100px 20px;
 }
 
 .hero h1 {
@@ -57,8 +72,8 @@ body {
 }
 
 .primary:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(56,189,248,0.5);
 }
 
 .secondary {
@@ -69,9 +84,13 @@ body {
   background: #1e293b;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
   margin: 80px 0;
+}
+
+h2 {
+  margin-bottom: 10px;
 }
 
 /* GRID */
@@ -83,7 +102,7 @@ section {
 
 /* CARDS */
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 20px;
@@ -92,15 +111,17 @@ section {
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-8px);
   border-color: #38bdf8;
-  box-shadow: 0 0 30px rgba(56,189,248,0.3);
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* SKILLS */
+.skills span {
+  background: #1e293b;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 5px;
+  display: inline-block;
 }
 
 /* FOOTER */
@@ -109,6 +130,17 @@ footer {
   padding: 40px;
   color: #64748b;
 }
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
 </style>
 </head>
 
@@ -116,54 +148,69 @@ footer {
 
 <div class="container">
 
+<!-- NAVBAR -->
+<nav>
+  <div><strong>Vishal</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
   <h1>Vishal Rajbhar</h1>
   <p>AI Developer • Building Real Projects • Future Engineer</p>
 
   <a class="btn primary" href="https://github.com/irl-raizen">GitHub</a>
-  <a class="btn secondary" href="#">Resume</a>
+  <a class="btn secondary" href="resume.pdf">Download Resume</a>
 </div>
 
 <!-- ABOUT -->
-<section data-aos="fade-up">
+<section id="about" data-aos="fade-up">
   <h2>About</h2>
   <p>
-    Computer Science student focused on Artificial Intelligence and building real-world systems.
-    I believe in learning by doing and solving practical problems.
+    I am a Computer Science student focused on Artificial Intelligence and real-world systems.
+    I enjoy solving practical problems and building projects that create impact.
   </p>
 </section>
 
 <!-- PROJECTS -->
-<section data-aos="fade-up">
+<section id="projects" data-aos="fade-up">
   <h2>Projects</h2>
 
   <div class="grid">
 
     <div class="card">
       <h3>AI Style Generator</h3>
-      <p>Anime & Ghibli-style image generation using AI models.</p>
-      <a class="btn primary" href="https://github.com/irl-raizen">View</a>
+      <p>AI-based system for generating anime and Ghibli-style images.</p>
+      <a class="btn primary" href="https://github.com/irl-raizen">View Code</a>
     </div>
 
     <div class="card">
       <h3>Inventory Management System</h3>
-      <p>System for tracking hardware and maintenance.</p>
-      <a class="btn primary" href="https://github.com/irl-raizen">View</a>
+      <p>System for tracking hardware, issues, and maintenance workflows.</p>
+      <a class="btn primary" href="https://github.com/irl-raizen">View Code</a>
     </div>
 
   </div>
-
 </section>
 
 <!-- SKILLS -->
 <section data-aos="fade-up">
   <h2>Skills</h2>
-  <p>Python • Machine Learning • Git • GitHub • Web Development</p>
+  <div class="skills">
+    <span>Python</span>
+    <span>Machine Learning</span>
+    <span>Git</span>
+    <span>GitHub</span>
+    <span>Web Development</span>
+  </div>
 </section>
 
 <!-- CONTACT -->
-<section data-aos="fade-up">
+<section id="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <p>Email: vishalrajbhar0777@gmail.com</p>
 </section>
