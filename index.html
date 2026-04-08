@@ -3,131 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vishal Rajbhar | AI Developer</title>
+<title>Vishal Rajbhar | Portfolio</title>
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #020617;
-  color: white;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+  overflow-x: hidden;
 }
 
-/* Particle */
-#tsparticles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Layout */
+/* Container */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 20px;
 }
 
-/* Hero */
+/* HERO */
 .hero {
   text-align: center;
   padding: 120px 20px;
+  animation: fadeIn 1s ease;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   background: linear-gradient(90deg,#38bdf8,#a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.typing {
-  font-size: 1.3rem;
-  margin-top: 10px;
+.hero p {
   color: #94a3b8;
+  font-size: 1.2rem;
 }
 
-/* Buttons */
+/* BUTTONS */
 .btn {
   margin: 10px;
-  padding: 12px 25px;
-  border-radius: 12px;
-  background: linear-gradient(90deg,#38bdf8,#a78bfa);
-  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.btn:hover {
+.primary {
+  background: linear-gradient(90deg,#38bdf8,#a78bfa);
+  color: white;
+}
+
+.primary:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(56,189,248,0.6);
 }
 
-/* Glass */
-.glass {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
+.secondary {
+  border: 1px solid #334155;
 }
 
-/* Sections */
+.secondary:hover {
+  background: #1e293b;
+}
+
+/* SECTION */
 section {
-  margin: 50px 0;
-  padding: 30px;
+  margin: 80px 0;
 }
 
-/* Grid */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-/* Cards */
+/* CARDS */
 .card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
   padding: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
   transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 0 30px rgba(167,139,250,0.5);
+  transform: translateY(-10px) scale(1.02);
+  border-color: #38bdf8;
+  box-shadow: 0 0 30px rgba(56,189,248,0.3);
 }
 
-/* Highlight */
-.highlight {
-  color: #38bdf8;
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
 }
 </style>
 </head>
 
 <body>
 
-<div id="tsparticles"></div>
-
 <div class="container">
 
 <!-- HERO -->
 <div class="hero">
   <h1>Vishal Rajbhar</h1>
-  <div class="typing" id="typing"></div>
+  <p>AI Developer • Building Real Projects • Future Engineer</p>
 
-  <a class="btn" href="https://github.com/irl-raizen">GitHub</a>
-  <a class="btn" href="#">Download Resume</a>
+  <a class="btn primary" href="https://github.com/irl-raizen">GitHub</a>
+  <a class="btn secondary" href="#">Resume</a>
 </div>
 
 <!-- ABOUT -->
-<section class="glass" data-aos="fade-up">
-  <h2>About Me</h2>
+<section data-aos="fade-up">
+  <h2>About</h2>
   <p>
-    I'm a <span class="highlight">Computer Science student</span> passionate about 
-    <span class="highlight">Artificial Intelligence</span> and building real-world solutions.
-    <br><br>
-    I focus on learning by doing — creating systems, solving problems, and turning ideas into working projects.
+    Computer Science student focused on Artificial Intelligence and building real-world systems.
+    I believe in learning by doing and solving practical problems.
   </p>
 </section>
 
@@ -137,92 +140,42 @@ section {
 
   <div class="grid">
 
-    <div class="card glass">
+    <div class="card">
       <h3>AI Style Generator</h3>
-      <p>
-        Built an AI system capable of generating anime and Ghibli-style images.
-        Focused on dataset preparation, preprocessing, and model workflows.
-      </p>
-      <a class="btn" href="https://github.com/irl-raizen">View Project</a>
+      <p>Anime & Ghibli-style image generation using AI models.</p>
+      <a class="btn primary" href="https://github.com/irl-raizen">View</a>
     </div>
 
-    <div class="card glass">
+    <div class="card">
       <h3>Inventory Management System</h3>
-      <p>
-        Designed a structured system for tracking hardware, issues, and maintenance.
-        Used logical data organization for real-world usage.
-      </p>
-      <a class="btn" href="https://github.com/irl-raizen">View Project</a>
+      <p>System for tracking hardware and maintenance.</p>
+      <a class="btn primary" href="https://github.com/irl-raizen">View</a>
     </div>
 
   </div>
+
 </section>
 
 <!-- SKILLS -->
-<section class="glass" data-aos="fade-up">
-  <h2>Skills</h2>
-  <p>
-    <span class="highlight">Python</span> • AI / Machine Learning • GitHub • Web Development • Data Handling
-  </p>
-</section>
-
-<!-- GOALS -->
 <section data-aos="fade-up">
-  <h2>Goals</h2>
-  <p>
-    My goal is to become a professional <span class="highlight">AI Engineer</span>,
-    build impactful systems, and contribute to real-world tech solutions.
-  </p>
+  <h2>Skills</h2>
+  <p>Python • Machine Learning • Git • GitHub • Web Development</p>
 </section>
 
 <!-- CONTACT -->
-<section class="glass" data-aos="fade-up">
+<section data-aos="fade-up">
   <h2>Contact</h2>
   <p>Email: vishalrajbhar0777@gmail.com</p>
-  <p>GitHub: github.com/irl-raizen</p>
 </section>
+
+<footer>
+  © 2026 Vishal Rajbhar
+</footer>
 
 </div>
 
-<!-- Typing -->
-<script>
-const text = ["AI Developer", "Building Real Projects", "Future Engineer"];
-let i = 0, j = 0, current = "", isDeleting = false;
-
-function type() {
-  current = text[i];
-  if (!isDeleting) {
-    document.getElementById("typing").innerHTML = current.substring(0, j++);
-    if (j > current.length) {
-      isDeleting = true;
-      setTimeout(type, 1000);
-      return;
-    }
-  } else {
-    document.getElementById("typing").innerHTML = current.substring(0, j--);
-    if (j === 0) {
-      isDeleting = false;
-      i = (i + 1) % text.length;
-    }
-  }
-  setTimeout(type, isDeleting ? 50 : 100);
-}
-type();
-</script>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
-
-<script>
-tsParticles.load("tsparticles", {
-  particles: {
-    number: { value: 50 },
-    color: { value: "#38bdf8" },
-    links: { enable: true },
-    move: { enable: true }
-  }
-});
-</script>
+<script>AOS.init({ duration: 800, once: true });</script>
 
 </body>
 </html>
